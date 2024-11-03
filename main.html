@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="./assets/css/styles.css" />
+        <link rel="stylesheet" href="./assets/css/shapes.css" />
+        <title>IntroVertBoy</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            @font-face {
+                font-family: "Mondwest";
+                src: url("/css/font/Mondwest.woff") format("woff");
+                font-weight: normal;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: "Hack";
+                src: url("/css/font/Hack-Regular.woff") format("woff");
+                font-weight: normal;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: "Hack";
+                src: url("/css/font/Hack-Bold.woff") format("woff");
+                font-weight: 700;
+                font-style: normal;
+            }
+        </style>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        bgGradientDeg: {
+                            55: "55deg",
+                        },
+                    },
+                    fontFamily: {
+                        mondwest: ["Mondwest", "sans-serif"],
+                        hack: ["Hack", "sans-serif"],
+                    },
+                },
+            };
+        </script>
+    </head>
+    <body>
+        <!-- DEMO MODAL -->
+        <div class="h-[100dvh] w-full fixed z-[9999] justify-center items-center backdrop-blur-[3px] px-4 hidden" id="demo-modal">
+            <div class="bg-white border-[#999999] border-2 rounded-[16px] p-6 w-fit max-w-[800px] flex flex-col xl:flex-row gap-6 shadow-2xl">
+                <div class="flex flex-col w-full xl:items-start xl:w-[50%]">
+                    <div class="flex items-center gap-3">
+                        <h1 class="text-[46px]">👋</h1>
+                        <div class="flex flex-col">
+                            <h1 class="font-mondwest text-[#333] text-2xl">Bersosial</h1>
+                            <a href="https://galeraz.viewsource.work" class="text-[#777] font-mondwest">https://bersosial.viewsource.work/</a>
+                        </div>
+                    </div>
+                    <p class="text-[#333] text-xs font-hack font-bold mt-3 indent-4">
+                        Hello Visitor! Welcome to one of my dummy projects. Dummy project is a project that i made to train my skills or just for my school task. I’ve hosted it to provide a preview
+                        for you and to showcase it in my portfolio. Enjoy!
+                    </p>
+                    <div class="flex gap-6 mt-6">
+                        <div class="flex flex-col gap-2">
+                            <p class="text-[#333] text-base font-mondwest">Made With</p>
+                            <div class="flex items-center gap-3">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="icon icon-tabler icons-tabler-outline icon-tabler-brand-laravel">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M3 17l8 5l7 -4v-8l-4 -2.5l4 -2.5l4 2.5v4l-11 6.5l-4 -2.5v-7.5l-4 -2.5z" />
+                                    <path d="M11 18v4" />
+                                    <path d="M7 15.5l7 -4" />
+                                    <path d="M14 7.5v4" />
+                                    <path d="M14 11.5l4 2.5" />
+                                    <path d="M11 13v-7.5l-4 -2.5l-4 2.5" />
+                                    <path d="M7 8l4 -2.5" />
+                                    <path d="M18 10l4 -2.5" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <p class="text-[#333] text-base font-mondwest">By viewsource</p>
+                            <div class="flex flex-col gap-3">
+                                <div class="flex items-center gap-2 group cursor-pointer" onclick="window.open('https://github.com/vi3w-s0urce')">
+                                    <svg
+                                        stroke="currentColor"
+                                        fill="currentColor"
+                                        stroke-width="0"
+                                        viewBox="0 0 24 24"
+                                        class="text-[#333] text-[24px]"
+                                        height="1em"
+                                        width="1em"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"></path>
+                                    </svg>
+                                    <p class="text-[#333] text-[10px] sm:text-xs font-hack group-hover:text-[#0000ff]">github.com/vi3w-s0urce</p>
+                                </div>
+                                <div class="flex items-center gap-2 group cursor-pointer" onclick="window.open('https://linkedin.com/in/vi3w-s0urce')">
+                                    <svg
+                                        stroke="currentColor"
+                                        fill="currentColor"
+                                        stroke-width="0"
+                                        viewBox="0 0 448 512"
+                                        class="text-[#333] text-[24px]"
+                                        height="1em"
+                                        width="1em"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path>
+                                    </svg>
+                                    <p class="text-[#333] text-[10px] sm:text-xs font-hack group-hover:text-[#0000ff]">linkedin.com/in/vi3w-s0urce</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full xl:w-[50%] flex flex-col gap-2">
+                    <p class="font-mondwest text-[#333] text-base">How to use this website:</p>
+                    <div class="py-3 px-4 flex flex-col gap-2 bg-[#e0e0e0]">
+                        <p class="text-xs font-hack">
+                            You can register (sign up) in this page:
+                            <br />
+                            <br />
+                            <a href="/register" class="text-[#0000ff] font-bold">bersosial.viewsource.work/register</a>
+                            <br />
+                            <br />
+                            <br />
+                            or you can login as visitor with this credentials:
+                            <br />
+                            <br />
+                            username: visitor
+                            <br />
+                            password: visitor
+                        </p>
+                    </div>
+                    <button class="min-w-0 w-full h-fit px-6 py-3 text-white font-hack font-bold mt-1 rounded-none bg-[#00FF00] hover:bg-[#00aa00] text-base" onclick="closeDemoModal()">ENJOY!</button>
+                </div>
+            </div>
+        </div>
+
+        <header class="header">
+            <a href="#" class="nav_logo hover" id="nav_logo">
+                INTRO
+                <br />
+                VERT
+                <br />
+                BOY
+            </a>
+            <nav class="nav">
+                <ul class="nav_list">
+                    <li class="nav_item hover"><a href="#about" class="nav_link">ABOUT</a></li>
+                    <li class="nav_item hover"><a href="#skills" class="nav_link">SKILLS</a></li>
+                    <li class="nav_item hover"><a href="#project" class="nav_link">PROJECT</a></li>
+                    <li class="nav_item hover"><a href="#contact" class="nav_link">CONTACT</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="wrapper">
+            <section id="welcome">
+                <div class="shapes_5 shapes_load_l"></div>
+                <div class="shapes_c_1 shapes_load_c"></div>
+                <div class="shapes_1 shapes_load_l"></div>
+                <div class="shapes_s_1 shapes_load_l"></div>
+                <div class="shapes_2 shapes_load_l"></div>
+
+                <div class="container">
+                    <div class="content">
+                        <div class="title-box"><h2 class="title" data-before="HELLO WORLD">HELLO WORLD</h2></div>
+                        <div>
+                            <p class="paragraph">
+                                <b>Hi!</b>
+                                Welcome to my website. This is my portfolio website.
+                                <br />
+                                Bruhh i dont know what i supposed to write here..
+                                <br />
+                                Ok maybe enough for this paragraph.
+                                <br />
+                                <b>You better open this website in monitor or laptop for the best view and experience</b>
+                                .
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="text3d-container">
+                        <div class="box">
+                            <h1 style="--i: 1" class="text3d">WELCOME</h1>
+                            <h1 class="stroke text3d" style="--i: 2">WELCOME</h1>
+                            <h1 style="--i: 3" class="text3d">WELCOME</h1>
+                            <h1 class="stroke text3d" style="--i: 4">WELCOME</h1>
+                            <h1 style="--i: 5" class="text3d">WELCOME</h1>
+                            <h1 class="stroke text3d" style="--i: 6">WELCOME</h1>
+                            <h1 style="--i: 7" class="text3d">WELCOME</h1>
+                            <h1 class="stroke text3d" style="--i: 8">WELCOME</h1>
+                            <h1 style="--i: 9" class="text3d">WELCOME</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shapes_s_2 shapes_load_r"></div>
+                <div class="shapes_3 shapes_load_r"></div>
+                <div class="shapes_c_2 shapes_load_c"></div>
+                <div class="shapes_cs_1 shapes_load_c"></div>
+                <div class="shapes_4 shapes_load_r"></div>
+            </section>
+
+            <section id="about">
+                <div class="shapes_bg"></div>
+                <h5 class="side-title">ABOUT</h5>
+                <div class="container">
+                    <div class="image-container">
+                        <img src="./assets/img/entahlah1.png" class="image" />
+                        <a href="#" class="hover"><h5>@this.mikee</h5></a>
+                    </div>
+                    <div class="content">
+                        <div class="title-box"><h2 class="title" data-before="Who am i?">Who am i?</h2></div>
+                        <div>
+                            <p class="paragraph">
+                                Hello my name is
+                                <span class="bold-blue">Michael</span>
+                                , just call me
+                                <span class="bold-blue">Mike</span>
+                                <br />
+                                I just
+                                <span class="bold-blue">16</span>
+                                y.o
+                                <br />
+                                I'm from Indonesia
+                                <br />
+                                I still student in
+                                <span class="bold-blue">software engineering</span>
+                                school
+                                <br />
+                                I like to learn programming language like
+                                <span class="bold-blue">Javascript, PHP, C++, Python and more</span>
+                                .
+                                <br />
+                                But beside that, i really like
+                                <span class="bold-blue">all about design</span>
+                                . Picture design, video editing,
+                                <br />
+                                and definitely
+                                <span class="bold-blue">UI/UX Design.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills">
+                <h5 class="side-title">SKILLS</h5>
+                <div class="container-col skill-container">
+                    <div class="title-box"><h2 class="title" data-before="My Skills">My Skills</h2></div>
+                    <div class="bar-skill-container">
+                        <div class="title-skill-box"><h5 class="title-skill">WEB DESIGN (HTML, CSS)</h5></div>
+                        <div class="bar-container">
+                            <div class="web-bar"><p>90%</p></div>
+                        </div>
+                        <div class="title-skill-box"><h5 class="title-skill">Javascript</h5></div>
+                        <div class="bar-container">
+                            <div class="js-bar"><p>60%</p></div>
+                        </div>
+                        <div class="title-skill-box"><h5 class="title-skill">PHP</h5></div>
+                        <div class="bar-container">
+                            <div class="php-bar"><p>30%</p></div>
+                        </div>
+                        <div class="title-skill-box"><h5 class="title-skill">C++</h5></div>
+                        <div class="bar-container">
+                            <div class="cpp-bar"><p>30%</p></div>
+                        </div>
+                        <div class="title-skill-box"><h5 class="title-skill">C#</h5></div>
+                        <div class="bar-container">
+                            <div class="csharp-bar"><p>20%</p></div>
+                        </div>
+                        <div class="title-skill-box"><h5 class="title-skill">Python</h5></div>
+                        <div class="bar-container">
+                            <div class="py-bar"><p>45%</p></div>
+                        </div>
+
+                        <div class="main-line"></div>
+                        <div class="left-line"><p>NONE</p></div>
+                        <div class="hleft-line"><p>BASIC</p></div>
+                        <div class="mid-line"><p>SENIOR</p></div>
+                        <div class="hright-line"><p>JUNIOR</p></div>
+                        <div class="right-line"><p>EXPERT</p></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="project">
+                <div class="shapes_bg_2">
+                    <img src="/assets/img/background.png" alt="background" class="img_background" />
+                </div>
+                <div class="container-col">
+                    <div class="title-box"><h2 class="title" data-before="Project">Project</h2></div>
+                    <div class="container">
+                        <div class="p-box hover">
+                            <img src="./assets/img/portfolio.png" alt="project" class="project-img" />
+                            <div class="p-text">
+                                <h2>Portfolio Web</h2>
+                                <p>
+                                    This website build is just by hand coded, i'm not using
+                                    <br />
+                                    any framework
+                                    <br />
+                                </p>
+                            </div>
+                        </div>
+                        <div class="p-box hover">
+                            <img src="https://picsum.photos/512" alt="project" class="project-img" />
+                            <div class="p-text">
+                                <h2>Entah Lah Kawan</h2>
+                                <p>
+                                    Blum ada project gan.
+                                    <br />
+                                    ini juga random image
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="button">MORE</a>
+                </div>
+            </section>
+
+            <section id="contact">
+                <div class="container-col">
+                    <div class="title-box hover">
+                        <h1 data-before="FACEBOOK"><a href="https://facebook.com" class="text-roll" target="blank">FACEBOOK</a></h1>
+                    </div>
+                    <div class="title-box hover">
+                        <h1 data-before="INSTAGRAM"><a href="https://instagram.com" class="text-roll" target="blank">INSTAGRAM</a></h1>
+                    </div>
+                    <div class="title-box hover">
+                        <h1 data-before="TWITTER"><a href="https://twitter.com" class="text-roll" target="blank">TWITTER</a></h1>
+                    </div>
+                    <div class="title-box hover">
+                        <h1 data-before="GITHUB"><a href="https://github.com" class="text-roll" target="blank">GITHUB</a></h1>
+                    </div>
+                    <div class="title-box hover">
+                        <h1 data-before="DRIBBBLE"><a href="https://dribbble.com" class="text-roll" target="blank">DRIBBBLE</a></h1>
+                    </div>
+                </div>
+                <footer>
+                    <div>
+                        <p class="copyright">© 2022 Mike</p>
+                    </div>
+                    <div class="media">WhatEver</div>
+                </footer>
+            </section>
+        </main>
+        <div class="cursor"></div>
+        <script src="./assets/js/index.js"></script>
+    </body>
+</html>
